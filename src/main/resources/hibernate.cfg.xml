@@ -14,7 +14,8 @@
         <property name="current_session_context_class">thread</property>
         <property name="hbm2ddl.auto">create-drop</property>
 
-        <mapping class="hw.hibernate.entities.Product"/>
+        <mapping class="hw_hibernate.Product"/>
+        <mapping class="hw_hibernate.Customer"/>
 
     </session-factory>
 </hibernate-configuration>

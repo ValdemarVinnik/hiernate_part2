@@ -1,4 +1,4 @@
-package hw.hibernate.db;
+package hw_hibernate.bd;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

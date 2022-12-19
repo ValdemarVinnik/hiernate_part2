@@ -1,6 +1,7 @@
-package hw.hibernate.entities;
+package hw_hibernate;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -8,7 +9,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="product_id")
+    @Column(name ="id")
     private Long id;
 
     @Column(name ="title")
@@ -16,6 +17,13 @@ public class Product {
 
     @Column(name ="price")
     private Long price;
+
+    @ManyToMany
+    @JoinTable(
+            name = "orders",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "customer_id"))
+    List<Customer> customers;
 
     public Product() {
     }
@@ -56,5 +64,9 @@ public class Product {
                 ", title='" + title + '\'' +
                 ", price=" + price +
                 '}';
+    }
+
+    public List<Customer> getCustomers() {
+        return customers;
     }
 }
