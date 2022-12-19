@@ -1,7 +1,5 @@
 package hw_hibernate;
 
-//import hw.hibernate.DaoProduct;
-//import hw.hibernate.Product;
 import hw_hibernate.bd.DaoCustomer;
 import hw_hibernate.bd.DaoProduct;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +24,7 @@ public class ShopService {
         this.daoCustomer = daoCustomer;
     }
 
-    public List<Product> getAllProducts(){
+    public List<Product> getAllProducts() {
         return daoProduct.findAll();
     }
 
@@ -34,11 +32,11 @@ public class ShopService {
         return daoCustomer.findAll();
     }
 
-    public List<Product> getProductsByCustomerId(long customerId){
+    public List<Product> getProductsByCustomerId(long customerId) {
         return daoCustomer.getProductsByCustomerId(customerId);
     }
 
-    public List<Customer> getCustomersByProductId(long productId){
-        return daoProduct.getCustomersByProductId( productId);
+    public List<Customer> getCustomersByProductId(long productId) {
+        return daoProduct.getCustomersByProductId(productId);
     }
 }

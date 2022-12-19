@@ -1,8 +1,5 @@
 package hw_hibernate.bd;
 
-//import hw.hibernate.Product;
-//import hw.hibernate.Product;
-
 import hw_hibernate.Customer;
 import hw_hibernate.Product;
 import org.hibernate.Session;
@@ -53,14 +50,14 @@ public class DaoProduct {
 
     public List<Customer> getCustomersByProductId(long productId) {
 
-            try(Session session = factory.getSession()){
-                session.beginTransaction();
-                Product product = session.get(Product.class,productId);
-                List <Customer> list = product.getCustomers();
-                //System.out.println(list.toString());
-                session.getTransaction().commit();
-                return list;
-            }
+        try (Session session = factory.getSession()) {
+            session.beginTransaction();
+            Product product = session.get(Product.class, productId);
+            List<Customer> list = product.getCustomers();
+            //System.out.println(list.toString());
+            session.getTransaction().commit();
+            return list;
+        }
 
     }
 }

@@ -9,13 +9,13 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="id")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name ="title")
+    @Column(name = "title")
     private String title;
 
-    @Column(name ="price")
+    @Column(name = "price")
     private Long price;
 
     @ManyToMany
